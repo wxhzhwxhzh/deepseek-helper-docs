@@ -1,5 +1,4 @@
 ---
-id: overview
 title: API 指南
 sidebar_label: 概览
 description: DeepSeek API 使用指南总览

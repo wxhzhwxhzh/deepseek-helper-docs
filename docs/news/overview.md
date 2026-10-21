@@ -1,7 +1,7 @@
 ---
-id: overview
 title: 新闻
 sidebar_label: 概览
+sidebar_position: 1
 description: DeepSeek API 官方公告与新闻
 ---
 
@@ -9,6 +9,7 @@ description: DeepSeek API 官方公告与新闻
 
 ## 最新动态
 
+- [2026-10 — DeepSeek-V4 系列模型上线](/docs/news/2026-10-deepseek-v4)
 - [2026-10 — DeepSeek-V4 系列模型上线](/docs/news/2026-10-deepseek-v4)
 
 ## 订阅方式

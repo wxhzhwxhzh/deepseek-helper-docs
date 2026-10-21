@@ -1,5 +1,4 @@
 ---
-id: overview
 title: API 文档
 sidebar_label: 概览
 description: DeepSeek API 接口参考总览
