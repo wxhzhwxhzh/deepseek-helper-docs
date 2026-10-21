@@ -26,12 +26,16 @@ export const SECTION_NAV_ITEMS: SectionNavItem[] = [
 
 export default function SectionNav(): JSX.Element {
   const {pathname} = useLocation();
+  // 部署到子路径（如 GitHub Pages 项目页 /deepseek-helper-docs/）时，pathname 自带前缀，
+  // 高亮判断需同步带上前缀，否则线上不会命中任何标签
+  const baseUrl = useBaseUrl('/');
 
   return (
     <nav className={styles.sectionNav} aria-label="文档栏目">
       <div className={styles.inner}>
         {SECTION_NAV_ITEMS.map((item) => {
-          const isActive = pathname.startsWith(item.pathPrefix);
+          const prefix = baseUrl.replace(/\/+$/, '') + item.pathPrefix;
+          const isActive = pathname.startsWith(prefix);
           return (
             <Link
               key={item.pathPrefix}
