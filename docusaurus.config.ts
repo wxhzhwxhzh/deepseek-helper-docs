@@ -113,6 +113,7 @@ const config: Config = {
             {label: 'API 文档', to: '/docs/api-reference/overview'},
             {label: '新闻', to: '/docs/news/overview'},
             {label: '更新日志', to: '/docs/changelog/overview'},
+            {label: 'GitHub', href: 'https://github.com/wxhzhwxhzh/deepseek-helper-docs'},
             {label: '开放平台', href: 'https://platform.deepseek.com'},
           ],
         },
