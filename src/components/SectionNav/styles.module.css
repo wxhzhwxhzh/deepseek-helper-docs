@@ -1,0 +1,55 @@
+.sectionNav {
+  background-color: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  flex: 0 0 var(--ifm-section-nav-height);
+  width: 100%;
+}
+
+.inner {
+  align-items: center;
+  display: flex;
+  gap: 2.25rem;
+  height: 100%;
+  /* 栏目导航铺满整行，与上方 logo 左对齐 */
+  margin: 0;
+  max-width: none;
+  padding: 0 var(--ifm-spacing-horizontal);
+}
+
+.link {
+  align-items: center;
+  color: var(--ifm-font-color-base);
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  height: 100%;
+  position: relative;
+  transition: color var(--ifm-transition-fast) ease;
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.linkActive {
+  color: var(--ifm-color-primary);
+}
+
+/* 当前栏目的蓝色下划线 */
+.linkActive::after {
+  background-color: var(--ifm-color-primary);
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 996px) {
+  .sectionNav {
+    display: none;
+  }
+}
