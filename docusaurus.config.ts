@@ -14,11 +14,12 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://api-docs.deepseek.com',
-  baseUrl: '/',
+  url: 'https://wxhzhwxhzh.github.io',
+  // 本地开发默认 '/'；GitHub Pages 部署时由 Actions 通过 BASE_URL 注入 '/deepseek-helper-docs/'
+  baseUrl: process.env.BASE_URL ?? '/',
 
-  organizationName: 'deepseek-ai',
-  projectName: 'deepseek-docs',
+  organizationName: 'wxhzhwxhzh',
+  projectName: 'deepseek-helper-docs',
 
   onBrokenLinks: 'throw',
 

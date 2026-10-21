@@ -1,0 +1,64 @@
+# GitHub Pages 自动构建并部署 Docusaurus 文档站
+#
+# 触发条件：push 到 main 分支，或手动在 Actions 页面点击 Run workflow。
+# 前提：GitHub 仓库 Settings → Pages → Build and deployment 的 Source 选择 "GitHub Actions"。
+#
+# 备注：若你的部署站是项目页（https://<用户名>.github.io/<仓库名>/），
+#       需要把 docusaurus.config.ts 里的 baseUrl 改为 "/<仓库名>/"。
+
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 允许该工作流向 GitHub Pages 写入、读取内容、获取 id-token（Pages 部署所需）
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时刻只允许一个 Pages 部署任务运行，新的 push 会取消正在进行的部署
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+        env:
+          # GitHub Pages 项目页部署路径，写入 docusaurus 的 baseUrl
+          BASE_URL: /deepseek-helper-docs/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Docusaurus 构建产物输出目录
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
