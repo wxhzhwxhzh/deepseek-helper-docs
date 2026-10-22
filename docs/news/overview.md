@@ -9,7 +9,7 @@ description: DeepSeek API 官方公告与新闻
 
 ## 最新动态
 
-- [2026-10 — DeepSeek-V4 系列模型上线](/docs/news/2026-10-deepseek-v4)
+- [2026-10 — Matt Pocock Skills 全览](/docs/news/2026-10-22-matt-pocock-skills)
 - [2026-10 — DeepSeek-V4 系列模型上线](/docs/news/2026-10-deepseek-v4)
 
 ## 订阅方式
