@@ -408,6 +408,15 @@
   background-color: #1e1f21;
 }
 
+/* 深色模式下主题切换按钮：把硬编码的深色图标改为浅色，避免与深色背景融为一体 */
+[data-theme='dark'] .navbar__items--right .clean-btn {
+  color: #f2f3f5;
+}
+
+[data-theme='dark'] .navbar__items--right .clean-btn:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
 [data-theme='dark'] .navbar__title,
 [data-theme='dark'] .navbar__link,
 [data-theme='dark'] .theme-doc-toc-desktop::before {

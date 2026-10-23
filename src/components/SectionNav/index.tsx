@@ -22,6 +22,7 @@ export const SECTION_NAV_ITEMS: SectionNavItem[] = [
   {label: 'API 文档', pathPrefix: '/docs/api-reference', to: '/docs/api-reference/overview'},
   {label: '新闻', pathPrefix: '/docs/news', to: '/docs/news/overview'},
   {label: '更新日志', pathPrefix: '/docs/changelog', to: '/docs/changelog/overview'},
+  {label: '博客', pathPrefix: '/blog', to: '/blog'},
 ];
 
 export default function SectionNav(): JSX.Element {

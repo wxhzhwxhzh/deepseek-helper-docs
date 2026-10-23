@@ -50,7 +50,9 @@ const config: Config = {
           breadcrumbs: false,
           showLastUpdateTime: false,
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
