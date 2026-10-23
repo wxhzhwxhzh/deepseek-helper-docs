@@ -8,3 +8,9 @@ saoshen:
   name: 佚名
   title: 匿名投稿
   image_url: https://drissionpage.cn/img/color_logo.png
+
+Deepseek-AI:
+  name: Deepseek-AI
+  title: AI 助手
+  url: https://www.deepseek.com
+  image_url: /img/deepseek-logo.webp
